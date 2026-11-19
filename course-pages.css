@@ -192,3 +192,29 @@ body[data-preview] .viewer-dock {display:none!important;}
 .epa .evidence-intro[data-slide-theme="conclusion-dark"] .evidence-intro-top::after {background:linear-gradient(90deg,#b9dbc1,#648375 52%,transparent);}
 .epa .evidence-intro[data-slide-theme="conclusion-dark"] .evidence-intro-foot .evidence-progress {background:#527066;}
 .epa .evidence-intro[data-slide-theme="conclusion-dark"] .evidence-progress::after {background:#bad8bd;}
+
+/* Course naming: oral account, two documentary sources, then the syllabus. */
+.epa .naming-spread {display:grid;gap:32px;}
+.epa .naming-lead {
+  display:grid;grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap:48px;align-items:center;padding:28px 40px;background:var(--oral-bg);
+  border-left:5px solid var(--accent-2);
+}
+.epa .naming-lead .tag {padding:0;border:0;background:transparent;}
+.epa .naming-lead h3 {margin:12px 0 0;font-size:43px;line-height:1.35;color:var(--oral-ink);}
+.epa .naming-reasons {padding-left:34px;border-left:1px solid #cfb7a8;}
+.epa .naming-reasons p {font-size:30px;line-height:1.55;margin:0 0 8px;}
+.epa .naming-spread a[data-source] {color:var(--accent);font-size:21px;line-height:1.5;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:5px;}
+.epa .naming-lead a[data-source] {color:var(--oral-ink);}
+.epa .naming-records {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px;}
+.epa .naming-records article {display:grid;grid-template-rows:auto auto 1fr auto;align-content:start;border-top:3px solid var(--accent);padding:12px 6px 0;}
+.epa .naming-records header {display:flex;align-items:center;gap:17px;color:var(--accent);}
+.epa .naming-records time {font-family:var(--epa-heading-font);font-weight:700;font-size:39px;line-height:1.2;font-variant-numeric:tabular-nums;}
+.epa .naming-records header span {font-size:21px;font-weight:650;padding-left:16px;border-left:1px solid var(--border-strong);}
+.epa .naming-records h3 {font-size:36px;line-height:1.35;margin:13px 0 9px;}
+.epa .naming-records p {font-size:28px;line-height:1.55;color:var(--text-2);margin:0 0 12px;}
+.epa .naming-records a {justify-self:start;}
+.epa .naming-syllabus {display:flex;align-items:center;gap:25px;padding:17px 24px;background:var(--surface-2);color:var(--accent);}
+.epa .naming-syllabus strong {font-size:24px;white-space:nowrap;}
+.epa .naming-syllabus p {font-size:27px;line-height:1.5;margin:0;padding-left:25px;border-left:1px solid var(--border-strong);}
+.epa .naming-syllabus a {margin-left:auto;white-space:nowrap;}

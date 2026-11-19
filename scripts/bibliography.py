@@ -57,7 +57,7 @@ def build_bibliography(root, sources, main_slides, reports, timeline, claims):
         title = entry['title']
         author = esc(entry['author']) + '。' if entry['author'] else ''
         flag = {'O01':'〔組員修讀經驗〕', 'O02':'〔導師轉述〕',
-                'O04':'〔組員任教經驗〕', 'O09':'〔課程團隊說明，組員轉述〕'}.get(sid, '')
+                'O04':'〔組員任教經驗〕', 'O09':'〔課程統籌說明〕'}.get(sid, '')
         return (
             f'<article class="bib-entry" data-bibliography-id="{sid}">'
             f'<span class="bib-id">{sid}</span><div class="bib-copy">'
