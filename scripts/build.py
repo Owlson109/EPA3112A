@@ -32,17 +32,20 @@ for row,slide in zip(intros,deck_slides):
 
 def clock(sec):return f'{sec//60}:{sec%60:02d}'
 def plain(s):return re.sub('<[^>]+>','',s)
-def refs(s,modal=False):
+def refs(source_ids,modal=False):
     out=[]
-    for sid in s['refs']:
+    for sid in source_ids:
         source=byid[sid]
         extra=f' data-source="{sid}"' if modal else ' target="_blank" rel="noopener"'
         out.append(f'<a href="appendix.html#{sid}"{extra}><b>{sid}</b> {esc(source.get("short",source["title"]))}</a>')
     return ' '.join(out)
+def note_source_ids(s):
+    return s['refs'] + s.get('extra_notes_refs', [])
+
 def notes(s):
     if s.get('appendix_number'):
         return '<p class="note-meta">資料來源附頁 · 查閱及答問用途，不計入正文17分鐘。</p>'+''.join('<p>'+p+'</p>' for p in s['notes'])
-    return f'<p class="note-meta">講者 {s["speaker"]} · 第 {s["number"]} 頁 · 配時 {clock(s["seconds"])}</p><p class="note-purpose">本頁目的：{esc(s["purpose"])}</p>'+''.join('<p>'+p+'</p>' for p in s['notes'])+f'<p class="transition"><strong>過渡：</strong>{esc(s["transition"])}</p><p class="note-ref">來源：{refs(s)}</p>'
+    return f'<p class="note-meta">講者 {s["speaker"]} · 第 {s["number"]} 頁 · 配時 {clock(s["seconds"])}</p><p class="note-purpose">本頁目的：{esc(s["purpose"])}</p>'+''.join('<p>'+p+'</p>' for p in s['notes'])+f'<p class="transition"><strong>過渡：</strong>{esc(s["transition"])}</p><p class="note-ref">來源：{refs(note_source_ids(s))}</p>'
 
 def asset_url(path):
     version = sha256((ROOT / path).read_bytes()).hexdigest()[:12]
@@ -78,7 +81,7 @@ sections=[]
 for s in deck_slides:
     title='' if s['number']==1 else '<h2>'+esc(s['title'])+'</h2>'
     appendix_class=' reference-slide' if s.get('appendix_number') else ''
-    footer_refs='<span>資料核讀截至2026.11.18 · HTML點文件名稱查詳情；PDF點文件名稱開啟公開原文。完整網址、核讀狀態及使用位置見研究附錄。</span>' if s.get('appendix_number') else '<span class="source-label">來源</span>'+refs(s,True)
+    footer_refs='<span>資料核讀截至2026.11.18 · HTML點文件名稱查詳情；PDF點文件名稱開啟公開原文。完整網址、核讀狀態及使用位置見研究附錄。</span>' if s.get('appendix_number') else '<span class="source-label">來源</span>'+refs(s['refs'],True)
     layout_attr=' data-layout="course-edition"' if s.get('layout')=='course-edition' else ''
     theme_attr=' data-slide-theme="conclusion-dark"' if s.get('theme')=='conclusion-dark' else ''
     sections.append(f'''<section class="slide{appendix_class}"{layout_attr}{theme_attr} data-title="{esc(s['title'],quote=True)}" data-speaker="{s['speaker']}" aria-label="第{s['number']}頁：{esc(s['title'],quote=True)}">
@@ -125,7 +128,7 @@ body='<section>'+allocation+'<p class="meta">17分鐘為講述配時，未經真
 txt=['EPA3112｜港專「運動及體適能教練」的發展','15頁｜三人｜講述配時17:00｜2026-11-18','A 1–5頁 5:30；B 6–10頁 5:50；C 11–15頁 5:40','首頁及兩頁來源附頁無文件動畫；第2–15頁共14段全播約增加1:21，合計約18:21；空白鍵／Esc可略過。可按實際排練調整語速。','']
 for s in slides:
     body+=f'<section class="notes-section" id="slide-{s["number"]}"><h2>{s["number"]:02d}　{esc(s["title"])}</h2>{notes(s)}</section>'
-    txt += [f'{s["number"]:02d} {s["title"]}｜講者{s["speaker"]}｜{clock(s["seconds"])}','目的：'+s['purpose'],'',*map(plain,s['notes']),'過渡：'+s['transition'],'來源：'+', '.join(s['refs']),'']
+    txt += [f'{s["number"]:02d} {s["title"]}｜講者{s["speaker"]}｜{clock(s["seconds"])}','目的：'+s['purpose'],'',*map(plain,s['notes']),'過渡：'+s['transition'],'來源：'+', '.join(note_source_ids(s)),'']
 reader('speaker-notes.html','三人逐字稿與排練配時','每頁標出要帶出的重點。「過渡」是講者離開本頁時說的最後一句，第5、10頁由此交給下一位組員。用 A−／A+ 調整字級；設定會記憶。講者視窗按 S 開啟；快速查看本頁講稿按 N。',body)
 (ROOT/'speaker-notes.txt').write_text('\n'.join(txt),encoding='utf-8')
 

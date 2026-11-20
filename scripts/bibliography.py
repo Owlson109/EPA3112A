@@ -13,7 +13,7 @@ def build_bibliography(root, sources, main_slides, reports, timeline, claims):
     byid = {s['id']: s for s in sources}
     uses = defaultdict(lambda: defaultdict(list))
     for slide in main_slides:
-        for sid in slide['refs']:
+        for sid in slide['refs'] + slide.get('extra_notes_refs', []):
             uses[sid]['正文／逐字稿'].append(str(slide['number']))
     for claim in claims:
         for sid in claim['source_ids']:
@@ -25,7 +25,7 @@ def build_bibliography(root, sources, main_slides, reports, timeline, claims):
         uses[report['id']]['研究報告筆記'].append(report['id'])
     assert set(uses) <= set(byid), sorted(set(uses) - set(byid))
     authors = {r['id']: r['author'] for r in reports}
-    main_ids = {sid for slide in main_slides for sid in slide['refs']}
+    main_ids = {sid for slide in main_slides for sid in slide['refs'] + slide.get('extra_notes_refs', [])}
     claim_ids = {sid for claim in claims for sid in claim['source_ids']} - main_ids
     report_ids = {r['id'] for r in reports} - main_ids - claim_ids
     time_ids = set(uses) - main_ids - claim_ids - report_ids
