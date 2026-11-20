@@ -16,8 +16,8 @@
   },
   {
     "path": "Nelson_第11至15頁講者稿.txt",
-    "bytes": 6419,
-    "sha256": "b63e230c6046df831744c8ebc7ca9dffc735cc259635b97bd0142d5efa87b43c"
+    "bytes": 6780,
+    "sha256": "9afe4b4a1fce8d0071ce67eed7075911bc512e6c975aa4fdee6d18c6e6ef7a08"
   },
   {
     "path": "README.md",
@@ -456,13 +456,13 @@
   },
   {
     "path": "data/content.csv",
-    "bytes": 37058,
-    "sha256": "9fd3b8f53dcca28c713cd9302cb99aeb047566ca47d6a87b09d7bbf5baeddc00"
+    "bytes": 37415,
+    "sha256": "2d702b055415d725ddb3ba2a0f5107024de7f26d93c45ee97e4699e0ad5a4743"
   },
   {
     "path": "data/content.json",
-    "bytes": 40186,
-    "sha256": "d78ea000302a02a0ccd07de1e10c6b85d395b6032e7fd66a45808daa6d320716"
+    "bytes": 40539,
+    "sha256": "e7ff16b66273082a22c967ae11c8bf781b4f848cf90e46157afe153cd5111b83"
   },
   {
     "path": "data/evidence_intros.json",
@@ -502,7 +502,7 @@
   {
     "path": "data/speaker_timing.json",
     "bytes": 998,
-    "sha256": "29579eb7011beace529e735cebb5eeba5de68a0f3e6891a960ca235d52e723c5"
+    "sha256": "b3bfbfd3dbdd36068bad4163c25aaca7be571473717b5c447aa7bd9f98b846ab"
   },
   {
     "path": "data/timeline.csv",
@@ -576,8 +576,8 @@
   },
   {
     "path": "index.html",
-    "bytes": 222979,
-    "sha256": "575e638e1229725d000d1040e01f57ed242d2119d63e6e2a3cdbfdd0a0fa32c5"
+    "bytes": 223335,
+    "sha256": "9b023da2dd32e2d1002ae326bb39b040f26893dc2a1b2ce21933e81a960f3a85"
   },
   {
     "path": "motion.css",
@@ -1141,13 +1141,13 @@
   },
   {
     "path": "speaker-notes.html",
-    "bytes": 29418,
-    "sha256": "7333dfdae405da0cf36ef62f43009c6d747845c4ecc4c278a741ce4729e30a4b"
+    "bytes": 29774,
+    "sha256": "8dd1b8ec726fc617fbf525b1523cf2bfa3dc327ad9971aac268dbee7f62dcf96"
   },
   {
     "path": "speaker-notes.txt",
-    "bytes": 15347,
-    "sha256": "dcb0b388da2e7be09ba356354153aebc82b13f9c093e5b3e0cb089bd609cd7f3"
+    "bytes": 15709,
+    "sha256": "d0785ed01f2d9ec49842d287512d9b65929138dda834554d484f8c63d928aa86"
   },
   {
     "path": "storyline.html",
