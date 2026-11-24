@@ -16,8 +16,8 @@
   },
   {
     "path": "Nelson_第11至15頁講者稿.txt",
-    "bytes": 10169,
-    "sha256": "5a3521151f7a99251ec7f175fdc79004be4ccf69e44d4fc4f29dd5e36632b04e"
+    "bytes": 10078,
+    "sha256": "e6bcde51b0920eaaac980c40683d463fb72522eedd370b15ba1756f4ebb06cfc"
   },
   {
     "path": "README.md",
@@ -456,13 +456,13 @@
   },
   {
     "path": "data/content.csv",
-    "bytes": 38203,
-    "sha256": "a515e29d1ed99042177e2da6fdc32aeb3880351f0d8ca84427d195877b4832ae"
+    "bytes": 38122,
+    "sha256": "fc60a373ec971c56cae70c010bb8f8cbc25e9e5c6821f0fc0734d611c101d0df"
   },
   {
     "path": "data/content.json",
-    "bytes": 41517,
-    "sha256": "cec714c3f22d8ed28b903529fd6b11d98be901bbd061501f1e7d7d3c95ee3b01"
+    "bytes": 41440,
+    "sha256": "29b91565dae8e7869a22e1580eaab5586c732e3c1c9371d4e62c81ed225deace"
   },
   {
     "path": "data/evidence_intros.json",
@@ -502,7 +502,7 @@
   {
     "path": "data/speaker_timing.json",
     "bytes": 998,
-    "sha256": "93cebdac312cd39833ca710356fdefbcd77f010cbd2da4226938b6c2397adaf8"
+    "sha256": "967612bdcf5a1bc739519cba1bc72246009482c899876a3bba884c3e1d2ced6f"
   },
   {
     "path": "data/timeline.csv",
@@ -576,8 +576,8 @@
   },
   {
     "path": "index.html",
-    "bytes": 230290,
-    "sha256": "fb372d29d401036805132c1c2f47e6a058c9a1dde6432d925507b245a52cc868"
+    "bytes": 230210,
+    "sha256": "e456b357f739e2a12a60ffd5845ce3d2abfdfe538e647d9a91920a6112d66340"
   },
   {
     "path": "motion.css",
@@ -1141,23 +1141,23 @@
   },
   {
     "path": "speaker-notes.html",
-    "bytes": 31562,
-    "sha256": "1e67fe462d1825353d3262a2d5454258f491fc86017cc0c5624336b39381a704"
+    "bytes": 31482,
+    "sha256": "cab19c6a053c0e405ce48d4142cc88b6d3da33f10a9455ffa819b3f3ef566670"
   },
   {
     "path": "speaker-notes.txt",
-    "bytes": 15860,
-    "sha256": "6a3a14aa0aa460821b00a8e6594f501aaaaf557511184d0f9640ee29883d22bd"
+    "bytes": 15774,
+    "sha256": "c805baf71a5da884a38a6f32a9e75cdd2624df2bf583c8ab30ce4cd25a133354"
   },
   {
     "path": "storyline.html",
-    "bytes": 6037,
-    "sha256": "a06520d323bdfc571243514113d23f3484fcf9ee6e377aa65c1cb3ec69fb068c"
+    "bytes": 6043,
+    "sha256": "4f6106dd884f95521e38af70e14b4e20dce7d0b15efe458d6b49f9e53bb94edb"
   },
   {
     "path": "storyline.txt",
-    "bytes": 3202,
-    "sha256": "b4fceb1de141417c2aa082064ae68fa8d6e685f46ea92e5ea9e04f3e989bd1cc"
+    "bytes": 3208,
+    "sha256": "43831471551fbdb10325130163babef532957821694e449dbd3eb35cfe26f16e"
   },
   {
     "path": "style.css",
