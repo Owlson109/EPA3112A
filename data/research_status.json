@@ -1,11 +1,11 @@
 {
-  "date": "2026-11-18",
+  "date": "2026-11-25",
   "scope": "目錄涵蓋正文、逐字稿、四份背景研究、主張核證及延伸時間線實際引用的資料。",
   "limit": "政策、課綱、評核方案及班別資料各按文件日期和適用屆別閱讀。",
   "stats": {
-    "source_entries": 78,
-    "document_entries": 68,
-    "reviewed_document_entries": 68,
+    "source_entries": 83,
+    "document_entries": 73,
+    "reviewed_document_entries": 73,
     "retrieved_document_entries": 67,
     "claims": 50,
     "timeline_entries": 76

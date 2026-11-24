@@ -72,7 +72,7 @@ def build_bibliography(root, sources, main_slides, reports, timeline, claims):
             return sum(1 if ord(c) > 255 else .55 for c in text)
         weights = [max(1, math.ceil(visual_length(e['title']) / 31)) * 19.5
                    + max(1, math.ceil(visual_length(e['date_or_version'] + e['locator'] + e['author']) / 39)) * 16
-                   + 9 for e in entries]
+                   + 6 for e in entries]
         prefix = [0]
         for weight in weights:
             prefix.append(prefix[-1] + weight)
@@ -101,7 +101,8 @@ def build_bibliography(root, sources, main_slides, reports, timeline, claims):
             notes=[f'本頁列出{label}。點文件名稱可查看完整網址及引用限制。PDF中的文件名稱連至公開原文；私人資料沒有公開連結。'],
             transition='按需查閱下一頁來源，或返回正文。',
         ))
-    metadata = dict(updated_on='2026-11-18', evidence_checked_through='2026-11-18',
+    checked_on = max(byid[entry['id']]['checked_on'] for entry in records)
+    metadata = dict(updated_on=checked_on, evidence_checked_through=checked_on,
                     main_slides=len(main_slides), appendix_slides=len(appendix),
                     total_slides=len(main_slides) + len(appendix), source_count=len(records),
                     groups=[dict(title=label, count=len(ids)) for label, ids, _ in groups], sources=records)

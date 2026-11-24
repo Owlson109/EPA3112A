@@ -1,14 +1,14 @@
 {
-  "updated_on": "2026-11-18",
-  "evidence_checked_through": "2026-11-18",
+  "updated_on": "2026-11-25",
+  "evidence_checked_through": "2026-11-25",
   "main_slides": 15,
   "appendix_slides": 2,
   "total_slides": 17,
-  "source_count": 79,
+  "source_count": 83,
   "groups": [
     {
       "title": "正文及逐字稿引用",
-      "count": 49
+      "count": 53
     },
     {
       "title": "補充核證文件",
@@ -996,6 +996,66 @@
         "正文／逐字稿": [
           "11",
           "15"
+        ]
+      }
+    },
+    {
+      "id": "D106",
+      "group": "正文及逐字稿引用",
+      "title": "自資專上教育資訊平台《批地計劃》",
+      "date_or_version": "計劃簡介",
+      "author": "",
+      "locator": "計劃目的及支援形式",
+      "url": "https://www.cspe.edu.hk/tc/overview/measures/land-grant-scheme/",
+      "review_state": "已核相關頁",
+      "used_in": {
+        "正文／逐字稿": [
+          "12"
+        ]
+      }
+    },
+    {
+      "id": "D107",
+      "group": "正文及逐字稿引用",
+      "title": "教育局推出用地及空置校舍供非牟利院校申請",
+      "date_or_version": "2013.02.19",
+      "author": "",
+      "locator": "馬鞍山校舍的用途及租金安排",
+      "url": "https://www.info.gov.hk/gia/general/201302/19/P201302190242.htm",
+      "review_state": "已核相關頁",
+      "used_in": {
+        "正文／逐字稿": [
+          "12"
+        ]
+      }
+    },
+    {
+      "id": "D108",
+      "group": "正文及逐字稿引用",
+      "title": "政府分配空置校舍支持自資專上院校提升質素",
+      "date_or_version": "2013.08.05",
+      "author": "",
+      "locator": "第1至3段，獲配機構及目的",
+      "url": "https://www.info.gov.hk/gia/general/201308/05/P201308050262.htm",
+      "review_state": "已核相關頁",
+      "used_in": {
+        "正文／逐字稿": [
+          "12"
+        ]
+      }
+    },
+    {
+      "id": "D109",
+      "group": "正文及逐字稿引用",
+      "title": "《星島日報》〈港專獲批馬鞍山空置校舍〉",
+      "date_or_version": "2013.08.06",
+      "author": "",
+      "locator": "第3至4段，月租及港專回應",
+      "url": "https://eduplus.hk/search/article_detail.jsp?article_id=6962&school_id=959",
+      "review_state": "已核相關頁",
+      "used_in": {
+        "正文／逐字稿": [
+          "12"
         ]
       }
     },

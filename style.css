@@ -198,7 +198,7 @@
 .epa .bib-intro{font-size:17px;line-height:1.4;color:var(--text-2)}
 .epa .bibliography-columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:start}
 .epa .bibliography-list{display:flex;flex-direction:column;gap:0}
-.epa .bib-entry{display:grid;grid-template-columns:35px minmax(0,1fr);gap:6px;border-top:1px solid var(--border);padding:4px 0;break-inside:avoid}
+.epa .bib-entry{display:grid;grid-template-columns:35px minmax(0,1fr);gap:6px;border-top:1px solid var(--border);padding:2.5px 0;break-inside:avoid}
 .epa .bib-id{font:14.5px/1.45 var(--font-mono);color:var(--accent);padding-top:1px}
 .epa .bib-copy{min-width:0}
 .epa .bib-copy h3{font-size:16.5px;line-height:1.25;margin:0 0 2px;font-weight:600}

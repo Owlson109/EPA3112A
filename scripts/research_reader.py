@@ -60,4 +60,4 @@ def build_research(root,read,sources,reader,table):
         loc='附錄' if a['slide']=='附錄' else '第'+a['slide']+'頁'
         body+='<details class="claim-record"><summary><span class="badge">'+a['id']+'</span>'+loc+'：'+esc(a['claim'])+'</summary><dl><dt>證據性質</dt><dd>'+esc(a['evidence_type'])+'／'+esc(a['status'])+'</dd><dt>來源</dt><dd>'+links(' '.join(a['source_ids']))+'</dd><dt>定位</dt><dd>'+esc(a['locators'])+'</dd><dt>適用範圍</dt><dd>'+esc(a['limits'])+'</dd></dl></details>'
     body+='</section><script src="research-search.js"></script>' 
-    reader('official-research.html','公開文件與逐項核證','科目674與香港應用學習制度的文件目錄，包括政策原文、評審及課綱的對照。查核截至2026年11月18日；正文維持15頁，詳細證據供答問及修訂。',body)
+    reader('official-research.html','公開文件與逐項核證',f'科目674與香港應用學習制度的文件目錄，包括政策原文、評審及課綱的對照。查核截至{status["date"]}。正文維持15頁，詳細證據供答問及修訂。',body)

@@ -716,15 +716,10 @@
   var timerDisplay = document.getElementById('timer-display');
   var timerCount = document.getElementById('timer-count');
 
-  /* Lay the cards out before anything else. This used to be the LAST statement
-     of the init, so every line below it was a single point of failure for the
-     whole presenter's visibility (#14). Function declarations hoist, so this is
-     safe here. */
-  applyLayout(readLayout());
-
-  /* ===== Default card layout ===== */
+  /* Restoring saved card positions needs the IDs and minimum sizes. */
   var CARD_IDS = ['card-cur','card-nxt','card-notes','card-timer'];
   var MIN_W = 180, MIN_H = 100;
+  applyLayout(readLayout());
 
   function defaultLayout() {
     /* A popup that opened minimised or in a background tab can report 0 here;
