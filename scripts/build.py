@@ -32,12 +32,19 @@ for row,slide in zip(intros,deck_slides):
 
 def clock(sec):return f'{sec//60}:{sec%60:02d}'
 def plain(s):return re.sub('<[^>]+>','',s)
-def refs(source_ids,modal=False):
+def refs(source_ids,modal=False,passages=None):
     out=[]
     for sid in source_ids:
         source=byid[sid]
         extra=f' data-source="{sid}"' if modal else ' target="_blank" rel="noopener"'
-        out.append(f'<a href="appendix.html#{sid}"{extra}><b>{sid}</b> {esc(source.get("short",source["title"]))}</a>')
+        href = f'appendix.html#{sid}'
+        label = source.get('short', source['title'])
+        if passages and sid in passages:
+            passage = passages[sid]
+            href, label = source['url'], passage['label']
+            if 'page' in passage:
+                href = href.split('#', 1)[0] + f'#page={passage["page"]}'
+        out.append(f'<a href="{esc(href, quote=True)}"{extra}><b>{sid}</b> {esc(label)}</a>')
     return ' '.join(out)
 def note_source_ids(s):
     return s['refs'] + s.get('extra_notes_refs', [])
@@ -45,7 +52,7 @@ def note_source_ids(s):
 def notes(s):
     if s.get('appendix_number'):
         return '<p class="note-meta">資料來源附頁 · 查閱及答問用途，不計入正文17分鐘。</p>'+''.join('<p>'+p+'</p>' for p in s['notes'])
-    return f'<p class="note-meta">講者 {s["speaker"]} · 第 {s["number"]} 頁 · 配時 {clock(s["seconds"])}</p><p class="note-purpose">本頁目的：{esc(s["purpose"])}</p>'+''.join('<p>'+p+'</p>' for p in s['notes'])+f'<p class="transition"><strong>過渡：</strong>{esc(s["transition"])}</p><p class="note-ref">來源：{refs(note_source_ids(s))}</p>'
+    return f'<p class="note-meta">講者 {s["speaker"]} · 第 {s["number"]} 頁 · 配時 {clock(s["seconds"])}</p><p class="note-purpose">本頁目的：{esc(s["purpose"])}</p>'+''.join('<p>'+p+'</p>' for p in s['notes'])+f'<p class="transition"><strong>過渡：</strong>{esc(s["transition"])}</p><p class="note-ref">來源：{refs(note_source_ids(s),passages=s.get("note_passages"))}</p>'
 
 def asset_url(path):
     version = sha256((ROOT / path).read_bytes()).hexdigest()[:12]
